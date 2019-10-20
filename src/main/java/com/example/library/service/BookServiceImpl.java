@@ -70,7 +70,9 @@ public class BookServiceImpl implements BookService {
     @Override
     public void takeBook(User user, Long bookId) {
         Book book = getBookById(bookId);
-        if (book.getQuantity() > 0 && !book.getUsers().contains(user)) {
+        boolean sameUser = book.getUsers()
+                .stream().map(u -> u.getId()).anyMatch(id -> id.equals(user.getId()));
+        if (book.getQuantity() > 0 && !sameUser) {
             book.reduceQuantity(1);
             book.getUsers().add(user);
             updateBook(book);

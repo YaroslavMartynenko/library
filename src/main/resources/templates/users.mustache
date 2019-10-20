@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Users</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Quantity of books</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#users}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{books.size}}</td>
+            <td>
+                <form action="/user/get/{{id}}" method="post">
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+                    <input type="submit" value="Show information">
+                </form>
+            </td>
+        </tr>
+    {{/users}}
+    </tbody>
+</table>
+
+</body>
+</html>

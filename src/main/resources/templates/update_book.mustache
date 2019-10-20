@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Updating book</title>
+</head>
+<body>
+
+<h3>Updating available book</h3>
+
+<div>
+    <form action="/book/update" method="post">
+        <input type="hidden" name="id" value="{{#book}}{{id}}{{/book}}">
+        <input type="text" name="title" placeholder="Title" value="{{#book}}{{title}}{{/book}}">
+        <input type="text" name="author" placeholder="Author" value="{{#book}}{{author}}{{/book}}">
+        <input type="text" name="genre" placeholder="Genre" value="{{#book}}{{genre}}{{/book}}">
+        <input type="text" name="year" placeholder="Year" value="{{#book}}{{year}}{{/book}}">
+        <input type="text" name="quantity" placeholder="Quantity" value="{{#book}}{{quantity}}{{/book}}">
+        <input type="hidden" name="users" value="{{#book}}{{users}}{{/book}}">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Update book">
+    </form>
+</div>
+
+</body>
+</html>

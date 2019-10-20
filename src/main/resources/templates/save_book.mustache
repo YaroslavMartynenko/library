@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Saving book</title>
+</head>
+<body>
+
+<h3>Saving new book</h3>
+
+<div>
+    <form action="/book/save" method="post">
+        <input type="text" name="title" placeholder="Title" >
+        <input type="text" name="author" placeholder="Author">
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="text" name="year" placeholder="Year">
+        <input type="text" name="quantity" placeholder="Quantity" value="1">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Save book">
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>User profile</title>
+</head>
+<body>
+
+<div>
+    {{#message}}
+        <h3>{{message}}</h3>
+    {{/message}}
+</div>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#books}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{author}}</td>
+            <td>{{genre}}</td>
+            <td>{{year}}</td>
+        </tr>
+    {{/books}}
+    </tbody>
+</table>
+
+</body>
+</html>

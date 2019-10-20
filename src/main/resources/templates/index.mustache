@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Index</title>
+</head>
+<body>
+
+<p>Hello, strenger! It's library. If you wanna use this app you have to sign up.
+    If you already have an account - just sign in.</p>
+<div>
+    <form action="/registration" method="get">
+        <input type="submit" value="Sign up">
+    </form>
+</div>
+
+<div>
+    {{#message}}
+        <h3>{{message}}</h3>
+    {{/message}}
+</div>
+
+<div>
+    <form action="/book/main" method="get">
+        <input type="submit" value="Sign in">
+    </form>
+</div>
+</body>
+</html>

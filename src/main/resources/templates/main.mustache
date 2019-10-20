@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Main</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+<div>
+{{#message}}
+    <h3>{{message}}</h3>
+{{/message}}
+</div>
+
+<div>
+    <form action="/book/list" method="get">
+        <input type="submit" value="Show list of all books">
+    </form>
+</div>
+
+<h3>Find book by parameters:</h3>
+
+<div>
+    <form action="/book/find" method="post">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="author" placeholder="Author">
+        <input type="text" name="genre" placeholder="Genre">
+        <input type="text" name="year" placeholder="Year">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Find book">
+    </form>
+</div>
+
+<div>
+    <form action="/user/profile" method="get">
+        <input type="submit" value="My profile">
+    </form>
+</div>
+
+<div>
+    <form action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+        <input type="submit" value="Sign out">
+    </form>
+</div>
+
+</body>
+</html>

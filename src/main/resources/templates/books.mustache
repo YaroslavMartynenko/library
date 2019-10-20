@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Books</title>
+</head>
+<body>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Year</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#message}}
+        <tr>
+            <td colspan="4">{{message}}</td>
+        </tr>
+    {{/message}}
+    {{#books}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{author}}</td>
+            <td>{{genre}}</td>
+            <td>{{year}}</td>
+            <td>
+                <form action="/book/take/{{id}}" method="post">
+                    <input type="hidden" name="_csrf" value="{{_csrf.token}}">
+                    <input type="submit" value="Take book">
+                </form>
+            </td>
+        </tr>
+    {{/books}}
+    </tbody>
+</table>
+
+</body>
+</html>
